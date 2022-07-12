@@ -26,7 +26,7 @@ const middleware = [
   }),
 ];
 
-const store = configureStore({
+  const store = configureStore({
   reducer: {
     contacts: persistReducer(persistConfig, reducer),
   },
@@ -35,6 +35,10 @@ const store = configureStore({
 });
 
 const persistor = persistStore(store);
+ 
+const storeExportObj = {
+  store,
+  persistor
+};
 
-
-export default { store, persistor };
+export default storeExportObj;
