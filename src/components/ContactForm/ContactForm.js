@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import actions from 'components/redux/actions';
 import s from './ContactForm.module.css';
 import { getContacts } from 'components/redux/selectors';
+import { nanoid } from 'nanoid';
 
 function ContactForm() {
   const [name, setName] = useState('');
@@ -36,6 +37,7 @@ function ContactForm() {
     } else {
       dispatch(
         actions.contactAdd({
+          id:nanoid(),
           name,
           number,
         }),

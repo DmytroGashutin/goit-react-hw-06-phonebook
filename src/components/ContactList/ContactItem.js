@@ -3,6 +3,7 @@ import s from './ContactList.module.css';
 
 const ContactItem = ({ contact, onDelete }) => {
   const { id, name, number } = contact;
+  
   return (
     <li className={s.list__item}>
       <p className={s.text}>{name}</p>
